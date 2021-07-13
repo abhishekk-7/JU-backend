@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Ticket',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=40)),
                 ('date', models.DateField()),
                 ('place', models.CharField(max_length=20)),
@@ -28,10 +29,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bookings',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quantity', models.IntegerField(default=1, validators=[django.core.validators.MaxValueValidator(4)])),
-                ('ticket', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bookings.ticket')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('quantity', models.IntegerField(default=1, validators=[
+                 django.core.validators.MaxValueValidator(4)])),
+                ('ticket', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='bookings.ticket')),
+                ('user', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

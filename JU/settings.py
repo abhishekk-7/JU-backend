@@ -25,7 +25,7 @@ SECRET_KEY = 'a&unt6e^rs!673(s#1jt^hu6grotz(*avxluvvy_#-djoe)f4w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ju-backend.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['ju-backend.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -94,8 +94,12 @@ WSGI_APPLICATION = 'JU.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dfpd1dmis4dtj8',
+        'HOST': 'ec2-54-157-100-65.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'ockqbfvwweptgo',
+        'PASSWORD': '6ef7312e76f27ac92ec95ce186b95a18f96bddf9a2fd36a906a5a3db2b859f19',
     }
 }
 
