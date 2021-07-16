@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Blog(models.Model):
     title = models.CharField(max_length=500)
-    created = models.DateTimeField(auto_now_add=True, blank=False)
+    created = models.DateField(blank=False)
     content = models.TextField(max_length=2000, blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
